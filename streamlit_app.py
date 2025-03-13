@@ -9,7 +9,21 @@ from nuclear_gauge_simulator import TroxlerGaugeSimulator, SoilDescriptions
 
 st.set_page_config(page_title="Nuclear Gauge Simulator", layout="wide")
 
-st.title("Nuclear Gauge Simulator")
+# Add title and the Buy Me a Coffee button at the top
+col_title, col_coffee = st.columns([4, 1])
+
+with col_title:
+    st.title("Nuclear Gauge Simulator")
+
+with col_coffee:
+    coffee_html = """
+    <div style="text-align: right; margin-top: 20px;">
+        <a href="https://www.buymeacoffee.com/finaplixx" target="_blank">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+        </a>
+    </div>
+    """
+    st.markdown(coffee_html, unsafe_allow_html=True)
 
 # Create two columns for the main layout
 col1, col2 = st.columns([3, 7])
@@ -160,12 +174,19 @@ with col2:
         ):
             st.success("Results exported successfully!")
 
-# Add a footer
+# Add a footer with another Buy Me a Coffee button
 st.markdown("---")
 st.markdown(
     """
-    <div style="text-align: center">
-        <p>Nuclear Gauge Simulator | Created for educational and planning purposes</p>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+        <div>
+            <p>Nuclear Gauge Simulator | Created for educational and planning purposes</p>
+        </div>
+        <div>
+            <a href="https://www.buymeacoffee.com/finaplixx" target="_blank">
+                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;" >
+            </a>
+        </div>
     </div>
     """, 
     unsafe_allow_html=True
